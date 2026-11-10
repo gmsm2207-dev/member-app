@@ -43,8 +43,8 @@ public class MemberService {
         if (member==null)  return false;
         // name, phone 값으로 수정
         // 기존 값을 수정하지 않으면 .... 비어있는 상태로 name, phone
-        if (name.isBlank()) member.setName(name);
-        if (phone.isBlank()) member.setPhone(phone);
+        if (! name.isBlank()) member.setName(name);
+        if (! phone.isBlank()) member.setPhone(phone);
         // 리포에 있는 update 수행
         return memberRepository.update(member);
     }
